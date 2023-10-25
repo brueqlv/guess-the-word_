@@ -68,7 +68,7 @@ var prompts = require('prompts');
                     targetWord[letterPosition] = response.letter;
                     wordParts[letterPosition] = '-';
                     if (word == targetWord.join("")) {
-                        console.log("Correct!");
+                        console.log("Correct! The word was: " + word);
                         console.log(targetWord.join(" "));
                         return [3 /*break*/, 3];
                     }
@@ -78,7 +78,7 @@ var prompts = require('prompts');
                 return [3 /*break*/, 1];
             case 3:
                 if (word != targetWord.join("")) {
-                    console.log("Wrong!");
+                    console.log("Wrong! The word was: " + word);
                 }
                 return [2 /*return*/];
         }
